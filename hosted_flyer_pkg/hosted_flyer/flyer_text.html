@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SarovaramPG Annual Magazine — Announcement</title>
+  <style>
+    :root{
+      --accent:#8a2d6b;
+      --text:#222;
+      --card: rgba(255,255,255,.92);
+    }
+    body{
+      margin:0;
+      background: #f6efe8 url('./assets/theme.jpg') center/cover fixed no-repeat;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans Malayalam", sans-serif;
+      color:var(--text);
+    }
+    .header img,.footer img{ width:100%; height:auto; display:block; }
+    .wrap{ max-width:900px; margin: 0 auto; padding: 18px 14px 60px; }
+    .card{ background:var(--card); border-radius:18px; padding:24px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+    h1{ font-size: clamp(26px, 5vw, 44px); margin: 0 0 6px; color:#2b2b2b; letter-spacing:.5px; }
+    .subtitle{ font-size: clamp(18px, 3.2vw, 28px); margin: 0 0 18px; font-weight:800; }
+    p{ line-height:1.65; font-size: clamp(16px, 2.5vw, 20px); margin: 10px 0; }
+    .cta{ margin-top: 16px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn{ text-decoration:none; padding:12px 16px; border-radius:12px; border:2px solid var(--accent); color:#fff; background:var(--accent); font-weight:700; }
+    .btn.secondary{ background:#fff; color:var(--accent); }
+    .switch{ display:flex; gap:8px; justify-content:flex-end; margin-bottom:10px; }
+    .switch button{ padding:8px 12px; border-radius:10px; background:#fff; border:1px solid #ddd; cursor:pointer; font-weight:600; }
+    .switch button.active{ background:var(--accent); border-color:transparent; color:#fff; }
+  </style>
+</head>
+<body>
+  <div class="header"><img src="./assets/header.jpg" alt="Sarovaram header"></div>
+  <div class="wrap">
+
+    <div class="switch">
+      <button id="en" class="active">English</button>
+      <button id="ml">മലയാളം</button>
+    </div>
+
+    <section id="enBlock" class="card">
+      <h1>ANNOUNCEMENT</h1>
+      <div class="subtitle">SarovaramPG Annual Magazine</div>
+      <p>We invite all residents to contribute <strong>articles, stories, poems, artwork, and hostel photos</strong> for our annual magazine. Share your experiences and creative expressions!</p>
+      <p><em>Submission guidelines and deadlines will follow soon.</em></p>
+      <div class="cta">
+        <a class="btn" href="#" id="formEN" target="_blank" rel="noopener">Submission Form</a>
+        <a class="btn secondary" href="#" id="waEN" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </section>
+
+    <section id="mlBlock" class="card" hidden lang="ml">
+      <h1>അറിയിപ്പ്</h1>
+      <div class="subtitle">സരോവരം പി.ജി. വാർഷിക മാസിക</div>
+      <p>എല്ലാ താമസക്കാരെയും <strong>ലേഖനങ്ങൾ, കഥകൾ, കവിതകൾ, ആർട്ട് വർക്സ്, ഹോസ്റ്റൽ ഫോട്ടോകൾ</strong> എന്നിവ പങ്കുവെക്കാൻ ക്ഷണിക്കുന്നു. നിങ്ങളുടെ അനുഭവങ്ങളും സൃഷ്ടികളും പങ്കിടൂ!</p>
+      <p><em>സമർപ്പണ മാർഗ്ഗനിർദ്ദേശങ്ങളും അവസാന തീയതിയും ഉടൻ അറിയിക്കും.</em></p>
+      <div class="cta">
+        <a class="btn" href="#" id="formML" target="_blank" rel="noopener">സമർപ്പണ ഫോം</a>
+        <a class="btn secondary" href="#" id="waML" target="_blank" rel="noopener">വാട്ട്‌സ്ആപ്പ്</a>
+      </div>
+    </section>
+  </div>
+  <div class="footer"><img src="./assets/footer.jpg" alt="Sarovaram footer"></div>
+
+  <script>
+    // Toggle
+    const enBtn=document.getElementById('en'), mlBtn=document.getElementById('ml');
+    const enBlock=document.getElementById('enBlock'), mlBlock=document.getElementById('mlBlock');
+    function setLang(l){ const isEN=l==='en'; enBlock.hidden=!isEN; mlBlock.hidden=isEN; enBtn.classList.toggle('active',isEN); mlBtn.classList.toggle('active',!isEN); }
+    enBtn.onclick=()=>setLang('en'); mlBtn.onclick=()=>setLang('ml');
+
+    // Replace with your links
+    const formURL="https://forms.gle/your-form";
+    const waURL="https://wa.me/91XXXXXXXXXX";
+    document.getElementById('formEN').href=formURL;
+    document.getElementById('formML').href=formURL;
+    document.getElementById('waEN').href=waURL;
+    document.getElementById('waML').href=waURL;
+  </script>
+</body>
+</html>

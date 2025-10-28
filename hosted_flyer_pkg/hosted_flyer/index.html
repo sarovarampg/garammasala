@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SarovaramPG Annual Magazine — Announcement</title>
+  <meta name="description" content="Annual Magazine announcement poster for Sarovaram Ladies PG." />
+  <style>
+    :root{ --bg:#f6efe8; }
+    html,body{height:100%;}
+    body{
+      margin:0; background: var(--bg) url('./assets/theme.jpg') center/cover fixed no-repeat;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans Malayalam", sans-serif;
+    }
+    .header img,.footer img{ width:100%; display:block; height:auto; }
+    main{ display:flex; justify-content:center; padding:16px; }
+    .poster{ width:min(100%, 860px); box-shadow: 0 8px 30px rgba(0,0,0,.15); border-radius: 16px; overflow:hidden; background:#fff; }
+    .poster img{ width:100%; height:auto; display:block; }
+    .bar{
+      max-width: 920px; margin: 10px auto 24px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    }
+    .btn{ text-decoration:none; padding:12px 16px; border-radius:12px; border:2px solid #8a2d6b; color:#fff; background:#8a2d6b; font-weight:700; }
+    .btn.secondary{ background:#fff; color:#8a2d6b; }
+  </style>
+</head>
+<body>
+  <div class="header"><img src="./assets/header.jpg" alt="Sarovaram Ladies PG"></div>
+
+  <main>
+    <figure class="poster">
+      <img src="./assets/poster.jpg" alt="Announcement: SarovaramPG Annual Magazine - invitation to submit articles, stories, poems, artwork, and hostel photos.">
+    </figure>
+  </main>
+
+  <div class="bar">
+    <a class="btn" href="#" id="formLink" target="_blank" rel="noopener">Submission Form</a>
+    <a class="btn secondary" href="#" id="whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
+    <a class="btn secondary" href="./flyer_text.html">Text Version</a>
+  </div>
+
+  <div class="footer"><img src="./assets/footer.jpg" alt="Your Support, Just a Call Away — Sarovaram Ladies PG"></div>
+
+  <script>
+    // Replace with your real links
+    document.getElementById('formLink').href = "https://forms.gle/your-form";
+    document.getElementById('whatsapp').href = "https://wa.me/91XXXXXXXXXX";
+  </script>
+</body>
+</html>
