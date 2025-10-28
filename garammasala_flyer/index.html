@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarovaram Ladies PG — Food Photo Drive</title>
+  <meta name="description" content="Share your favorite hostel meals to be featured in our digital food catalog." />
+  <style>
+    :root{
+      --card-bg: rgba(255,255,255,0.9);
+      --accent: #8a2d6b; /* matches Sarovaram magenta tone */
+      --accent-2: #6b2d8a;
+      --text:#222;
+    }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Malayalam Sangam MN", "Noto Sans Malayalam", sans-serif;
+      color: var(--text);
+      background: #f6efe8 url('./assets/theme.jpg') center/cover fixed no-repeat;
+    }
+    .header{
+      width:100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.75));
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky; top:0; z-index: 10;
+    }
+    .header img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+      display:flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .lang-toggle{
+      align-self:flex-end;
+      display:flex; gap:8px;
+    }
+    .lang-toggle button{
+      border:1px solid #ddd; background:#fff; cursor:pointer;
+      padding:8px 12px; border-radius:10px; font-weight:600;
+    }
+    .lang-toggle button.active{
+      background: var(--accent); color:#fff; border-color: transparent;
+    }
+    .card{
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+    h1{ margin: 8px 0 6px; font-size: clamp(22px, 4.5vw, 36px); color: var(--accent); }
+    h2{ margin: 0 0 10px; font-size: clamp(18px, 3.8vw, 26px); color: var(--accent-2); }
+    p{ line-height:1.6; margin: 8px 0; }
+    .cta{
+      display:flex; flex-wrap: wrap; gap:12px; margin-top: 14px;
+    }
+    .btn{
+      padding:12px 16px; border-radius: 12px; font-weight:700; text-decoration:none; display:inline-block;
+      border: 2px solid var(--accent); color: #fff; background: var(--accent);
+    }
+    .btn.secondary{
+      background:#fff; color: var(--accent); border-color: var(--accent);
+    }
+    .info-grid{
+      display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      margin-top:10px;
+    }
+    .pill{
+      background:#fff; border:1px dashed #d9bfd0; border-radius:999px; padding:8px 12px; display:inline-block;
+    }
+    .footer{
+      position:relative; margin-top:30px;
+    }
+    .footer img{ width:100%; height:auto; display:block; }
+    .badge{ font-size:14px; opacity:0.8; }
+    .sr-only{ position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to content</a>
+
+  <div class="header">
+    <img src="./assets/header.jpg" alt="Sarovaram Ladies PG — Where comfort meets care">
+  </div>
+
+  <main id="content" class="wrap">
+    <div class="lang-toggle" role="tablist" aria-label="Language toggle">
+      <button id="btn-en" class="active" role="tab" aria-selected="true" aria-controls="content-en">English</button>
+      <button id="btn-ml" role="tab" aria-selected="false" aria-controls="content-ml">മലയാളം</button>
+    </div>
+
+    <!-- English block -->
+    <section id="content-en" class="card" lang="en">
+      <h1>Share Your Favorite Hostel Meals!</h1>
+      <p>We’re building a beautiful <strong>digital food catalog</strong> for Sarovaram Ladies PG. Help us by sharing clear photos of the meals served — breakfast, lunch, dinner, and snacks.</p>
+      <div class="info-grid">
+        <div class="card">
+          <h2>How to participate</h2>
+          <p>Tap the button below to submit a photo with: Food name, date served, and any notes.</p>
+          <div class="cta">
+            <a class="btn" href="#" id="formLinkEN" target="_blank" rel="noopener">Upload Food Photo</a>
+            <a class="btn secondary" href="#" id="whatsappEN" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+          <p class="badge">Accepted: JPG/PNG up to 10 MB. Try to shoot in good lighting.</p>
+        </div>
+        <div class="card">
+          <h2>Why this matters</h2>
+          <p>Your photos will help new and current residents preview our menu and celebrate our kitchen’s variety. The best photos will be featured in a <strong>flipbook-style menu</strong> on our website.</p>
+          <span class="pill">Safe • Secure • Supportive</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Malayalam block -->
+    <section id="content-ml" class="card" lang="ml" hidden>
+      <h1>നിങ്ങളുടെ പ്രിയപ്പെട്ട ഹോസ്റ്റൽ ഭക്ഷണങ്ങളുടെ ചിത്രങ്ങൾ പങ്കിടൂ!</h1>
+      <p>സരോവരം ലേഡീസ് പി.ജി. യുടെ ഒരു മനോഹരമായ <strong>ഡിജിറ്റൽ ഫുഡ് കാറ്റലോഗ്</strong> തയ്യാറാക്കുകയാണ്. പ്രാതൽ, ഉച്ചഭക്ഷണം, വൈകുന്നേരം, സ്നാക്ക്സ് എന്നിവയുടെ വ്യക്തമായ ഫോട്ടോകൾ പങ്കുവെക്കുക.</p>
+      <div class="info-grid">
+        <div class="card">
+          <h2>എങ്ങനെ പങ്കെടുക്കാം</h2>
+          <p>ചുവടെയുള്ള ബട്ടൺ അമർത്തി ഫുഡ് ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക. ഭക്ഷണത്തിന്റെ പേര്, നൽകിയ തീയതി, ചെറിയ കുറിപ്പ് എന്നിവ ചേർക്കുക.</p>
+          <div class="cta">
+            <a class="btn" href="#" id="formLinkML" target="_blank" rel="noopener">ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക</a>
+            <a class="btn secondary" href="#" id="whatsappML" target="_blank" rel="noopener">വാട്ട്‌സ്ആപ്പ്</a>
+          </div>
+          <p class="badge">ഫയൽ: JPG/PNG, പരമാവധി 10MB. നല്ല വെളിച്ചത്തിൽ ചിത്രമെടുക്കാൻ ശ്രമിക്കുക.</p>
+        </div>
+        <div class="card">
+          <h2>ഇത് എന്തിന്?</h2>
+          <p>ഞങ്ങളുടെ അടുക്കളയുടെ വൈവിധ്യം എല്ലാവർക്കും കാണിക്കാനാണ് ഈ പദ്ധതി. മികച്ച ചിത്രങ്ങൾ വെബ്‌സൈറ്റിലെ <strong>ഫ്ലിപ്പ്‌ബുക്ക് മെനുവിൽ</strong> ഉൾപ്പെടുത്തും.</p>
+          <span class="pill">Safe • Secure • Supportive</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="./assets/footer.jpg" alt="Your support, just a call away — Sarovaram Ladies PG">
+  </footer>
+
+  <script>
+    // Simple language toggle
+    const btnEN = document.getElementById('btn-en');
+    const btnML = document.getElementById('btn-ml');
+    const en = document.getElementById('content-en');
+    const ml = document.getElementById('content-ml');
+
+    function setLang(lang){
+      const isEN = lang === 'en';
+      en.hidden = !isEN;
+      ml.hidden = isEN;
+      btnEN.classList.toggle('active', isEN);
+      btnML.classList.toggle('active', !isEN);
+      btnEN.setAttribute('aria-selected', String(isEN));
+      btnML.setAttribute('aria-selected', String(!isEN));
+      localStorage.setItem('sarovaram_lang', lang);
+      document.documentElement.lang = lang;
+    }
+    btnEN.addEventListener('click', () => setLang('en'));
+    btnML.addEventListener('click', () => setLang('ml'));
+
+    // Restore previous choice
+    setLang(localStorage.getItem('sarovaram_lang') || 'en');
+
+    // Replace placeholders with your actual links
+    const formURL = "https://forms.gle/your-google-form"; // TODO: replace
+    const whatsappURL = "https://wa.me/919999999999"; // TODO: replace with your number in intl format
+
+    document.getElementById('formLinkEN').href = formURL;
+    document.getElementById('formLinkML').href = formURL;
+    document.getElementById('whatsappEN').href = whatsappURL;
+    document.getElementById('whatsappML').href = whatsappURL;
+  </script>
+</body>
+</html>
